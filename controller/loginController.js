@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const createError = require("http-errors");
 
-//internal imports
+// internal imports
 const User = require("../models/People");
 
 // get login page
@@ -56,14 +56,14 @@ async function login(req, res, next) {
     } else {
       throw createError("Login failed! Please try again.");
     }
-  } catch (error) {
+  } catch (err) {
     res.render("index", {
       data: {
         username: req.body.username,
       },
       errors: {
         common: {
-          msg: error.message,
+          msg: err.message,
         },
       },
     });
