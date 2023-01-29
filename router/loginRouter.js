@@ -3,12 +3,12 @@ const express = require("express");
 
 // internal imports
 const { getLogin, login, logout } = require("../controller/loginController");
-const { redirectLoggedIn } = require("../middlewares/common/checkLogin");
 const decorateHtmlResponse = require("../middlewares/common/decorateHtmlResponse");
 const {
-  doLoginValidationHandler,
   doLoginValidators,
-} = require("../middlewares/login/loginValidator");
+  doLoginValidationHandler,
+} = require("../middlewares/login/loginValidators");
+const { redirectLoggedIn } = require("../middlewares/common/checkLogin");
 
 const router = express.Router();
 

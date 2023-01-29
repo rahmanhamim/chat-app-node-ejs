@@ -7,11 +7,6 @@ function notFoundHandler(req, res, next) {
 
 // default error handler
 function errorHandler(err, req, res, next) {
-  // res.locals.title = "Error page"
-  /*  res.render("error", {
-    title: "Error page",
-  }); */
-
   res.locals.error =
     process.env.NODE_ENV === "development" ? err : { message: err.message };
 

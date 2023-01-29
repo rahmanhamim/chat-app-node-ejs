@@ -5,7 +5,6 @@ function decorateHtmlResponse(page_title) {
     res.locals.loggedInUser = {};
     res.locals.errors = {};
     res.locals.data = {};
-
     next();
   };
 }
